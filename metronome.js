@@ -21,6 +21,18 @@ async function main() {
     tempo = Number(value);
   });
 
+  document
+    .querySelector("#tempo-decrement")
+    .addEventListener("click", function () {
+      setTempo(tempo - 1);
+    });
+
+  document
+    .querySelector("#tempo-increment")
+    .addEventListener("click", function () {
+      setTempo(tempo + 1);
+    });
+
   const [kick, snare] = await Promise.all([
     fetchAudioBuffer(audioCtx, "samples/linndrum/kick.wav"),
     fetchAudioBuffer(audioCtx, "samples/linndrum/sd.wav"),

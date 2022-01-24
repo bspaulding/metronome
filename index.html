@@ -9,7 +9,11 @@
     <button id="playing">
       <label for="tempo"><span class="form-value">80</span></label>
     </button>
-    <input type="range" min="20" max="200" id="tempo" value="80" />
+    <div id="tempo-controls">
+      <button id="tempo-decrement">-</button>
+      <input type="range" min="20" max="200" id="tempo" value="80" />
+      <button id="tempo-increment">+</button>
+    </div>
     <script type="module" src="metronome.js"></script>
   </body>
 </html>

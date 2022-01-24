@@ -3,8 +3,13 @@ body {
   width: 100%;
   height: 100%;
 
-  background: rgb(33, 33, 33);
-  color: rgb(233, 233, 233);
+  --bg-color: rgb(33, 33, 33);
+  --fg-color: rgb(233, 233, 233);
+  --is-playing-color: rgb(255, 165, 0);
+  --is-playing-beat-color: rgb(0, 165, 0);
+
+  background: var(--bg-color);
+  color: var(--fg-color);
 
   display: flex;
   flex-direction: column;
@@ -17,7 +22,7 @@ body {
 }
 
 button#playing {
-  --playing-color: rgb(233, 233, 233);
+  --playing-color: var(--fg-color);
 
   margin-top: 50%;
   width: 200px;
@@ -36,14 +41,32 @@ button#playing {
 }
 
 button#playing.is-playing {
-  --playing-color: rgb(255, 165, 0);
+  --playing-color: var(--is-playing-color);
 }
 
 button#playing.is-playing.beat {
-  --playing-color: rgb(0, 165, 0);
+  --playing-color: var(--is-playing-beat-color);
 }
 
-input#tempo {
+#tempo-controls {
   margin-bottom: 20%;
   width: 80%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tempo-controls > button {
+  flex: 1;
+
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  background: var(--bg-color);
+  color: var(--fg-color);
+}
+
+#tempo-controls > input[type="range"] {
+  flex: 8;
 }
