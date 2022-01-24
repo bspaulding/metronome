@@ -12,6 +12,10 @@ body {
   justify-content: space-between;
 }
 
+body {
+  max-width: 720px;
+}
+
 button#playing {
   --playing-color: rgb(233, 233, 233);
 
